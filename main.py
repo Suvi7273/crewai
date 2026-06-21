@@ -64,17 +64,6 @@ class AiTrendCrew:
             verbose=True
         )  
         
-if __name__ == "__main__":
-    print("Starting AI Trend Analysis Crew...")
-    
-    # Instantiate the decorated class and trigger the crew method
-    ai_crew_instance = AiTrendCrew().crew()
-    result = ai_crew_instance.kickoff()
-    
-    print("\n" + "="*50)
-    print("FINAL RESULT:")
-    print("="*50)
-    print(result)
 
 from fastapi import FastAPI, HTTPException
 
@@ -91,3 +80,15 @@ def run_crew():
         return {"status": "success", "result": str(result)}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    print("Starting AI Trend Analysis Crew...")
+    
+    # Instantiate the decorated class and trigger the crew method
+    ai_crew_instance = AiTrendCrew().crew()
+    result = ai_crew_instance.kickoff()
+    
+    print("\n" + "="*50)
+    print("FINAL RESULT:")
+    print("="*50)
+    print(result)
